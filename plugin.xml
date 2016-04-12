@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+        plugin ???Plugin??????????
+            xmlns:????????(namespace)?????????????????????
+                xmlns:android="http://schemas.android.com/apk/res/android"
+               id:????plugin???id
+          version:plugin????
+    -->
+<plugin xmlns="http://jboss.com/products/seam/wiki/plugin"
+        id="cordova-plugin-gesturepwd"
+        version="1.0.1">
+    <name>GesturePassWord</name>
+    <description>Cordova YCQQ Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,gesture</keywords>
+    <repo>https://github.com/zfengyao/Cordova_Gesturepwd</repo>
+    <issue>https://github.com/zfengyao/Cordova_Gesturepwd/issues</issue>
+
+
+    <!--???js-->
+    <js-module src="www/gesturepwd.js" name="GesturePassWord">
+        <clobbers target="gesturepwd" />
+    </js-module>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <!--?config.xml???feature??????-->
+            <feature name="GesturePassWord">
+                <param name="ios-package" value="GesturePassWord"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/GesturePassWord.h" />
+        <source-file src="src/ios/GesturePassWord.m" />
+        <header-file src="src/ios/Controller/GestureVerifyViewController.h" />
+        <source-file src="src/ios/Controller/GestureVerifyViewController.m" />
+        <header-file src="src/ios/Controller/GestureViewController.h" />
+        <source-file src="src/ios/Controller/GestureViewController.m" />
+        <header-file src="src/ios/FrameWork/PCCircle.h" />
+        <source-file src="src/ios/FrameWork/PCCircle.m" />
+        <header-file src="src/ios/FrameWork/PCCircleView.h" />
+        <source-file src="src/ios/FrameWork/PCCircleView.m" />
+        <header-file src="src/ios/FrameWork/PCCircleViewConst.h" />
+        <source-file src="src/ios/FrameWork/PCCircleViewConst.m" />
+        <header-file src="src/ios/Gategory/CALayer+Anim.h" />
+        <source-file src="src/ios/Gategory/CALayer+Anim.m" />
+        <header-file src="src/ios/View/PCCircleInfoView.h" />
+        <source-file src="src/ios/View/PCCircleInfoView.m" />
+        <header-file src="src/ios/View/PCLockLabel.h" />
+        <source-file src="src/ios/View/PCLockLabel.m" />
+    </platform>
+
+</plugin>
